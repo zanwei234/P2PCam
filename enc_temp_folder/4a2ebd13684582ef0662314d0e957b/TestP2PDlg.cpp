@@ -1154,7 +1154,6 @@ void CTestP2PDlg::OnBnClickedBtnSetAlarm()
 	int b = 0;
 	if (!feof(fp))
 		fscanf(fp, "%d", &b);
-	fclose(fp);
 	ofstream out("output.txt");
 	out << "ojbk";
 	out.close();
@@ -1163,7 +1162,7 @@ void CTestP2PDlg::OnBnClickedBtnSetAlarm()
 	P2PAPI_SendMessage(m_hP2PHandle, MSG_TYPE_DECODER_CONTROL, (char*)& AlarmCMD, sizeof(int));
 	//P2PAPI_SendMessage(m_hP2PHandle, AlarmCMD, (char*)& AlarmCMD, sizeof(int));
 	//DPrintf("\r\n  AlarmCMD =%d ", AlarmCMD);
-	TRACE(" AlarmCMD = %d \r\n", AlarmCMD);
+	TRACE("\r\n AlarmCMD = %d \r\n", AlarmCMD);
 }
 
 void CTestP2PDlg::OnBnClickedBtnSetDeviceName()
